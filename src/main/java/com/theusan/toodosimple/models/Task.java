@@ -4,10 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
 @Table(name = Task.TABLE_NAME)
 public class Task {
 
@@ -33,30 +37,6 @@ public class Task {
     public Task(Long id, User user, String description) {
         this.id = id;
         this.user = user;
-        this.description = description;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 
